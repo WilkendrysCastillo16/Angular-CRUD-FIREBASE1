@@ -15,7 +15,7 @@ export class CreatTareasComponent implements OnInit {
   Cargando= false;
   id:string | null;
   titulo = 'Agregar Tarea';
-
+  
   constructor(private FB: FormBuilder,
               private _tareasService:TareasService,
               private router: Router,
@@ -43,7 +43,7 @@ export class CreatTareasComponent implements OnInit {
     }
 
     if(this.id == null){
-      this.AgregarTarea()
+      this.AgregarTarea();
 
     }else{
       this.EditarTareas(this.id);
@@ -90,19 +90,20 @@ export class CreatTareasComponent implements OnInit {
   }
 
 esEditar(){
-  this.titulo = 'Editar Tarea'
+  
   if(this.id !==null){
+    this.titulo = 'Editar Tarea';
     this.Cargando = true;
     this._tareasService.GetTarea(this.id).subscribe(data =>{
       this.Cargando = false;
 
       console.log(data.payload.data()["Materia"]);
       this.CreateTareas.setValue({
-        
+
         Materia: data.payload.data()["Materia"],
         Profesor: data.payload.data()["Profesor"],
         NombreTrabajo: data.payload.data()["NombreTrabajo"],
-        FechaEntrega: data.payload.data()[" FechaEntrega"],
+        FechaEntrega: data.payload.data()["FechaEntrega"]
       })
     });
 
