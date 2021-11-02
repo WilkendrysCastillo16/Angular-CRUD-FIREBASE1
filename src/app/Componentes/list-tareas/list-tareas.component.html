@@ -14,35 +14,15 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>Programacion web</td>
-                    <td>Luis Soto</td>
-                    <td>To Do List en angular</td>
-                    <td>3/11/2021</td>
+                  <tr *ngFor="let Tarea of Tareas">
+                    <td>{{Tarea.Materia}}</td>
+                    <td>{{Tarea.Profesor}}</td>
+                    <td>{{Tarea.NombreTrabajo}}</td>
+                    <td>{{Tarea.FechaEntrega}}</td>
                     <td>
                         <i class="A far fa-edit fa-lg text-info"></i>
                         <i class="B far fa-trash-alt fa-lg text-danger"></i>
                     </td>
-                  </tr>
-                  <tr>
-                    <td>Programacion web</td>
-                    <td>Luis Soto</td>
-                    <td>To Do List en angular</td>
-                    <td>3/11/2021</td>
-                    <td>
-                      <i class="A far fa-edit fa-lg text-info"></i>
-                      <i class="B far fa-trash-alt fa-lg text-danger"></i>
-                  </td>
-                  </tr>
-                  <tr>
-                    <td>Programacion web</td>
-                    <td>Luis Soto</td>
-                    <td>To Do List en angular</td>
-                    <td>3/11/2021</td>
-                    <td>
-                      <i class="A far fa-edit fa-lg text-info"></i>
-                      <i class="B far fa-trash-alt fa-lg text-danger"></i>
-                  </td>
                   </tr>
                 </tbody>
               </table>
