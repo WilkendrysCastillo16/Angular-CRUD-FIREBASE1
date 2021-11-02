@@ -12,6 +12,7 @@ import { TareasService } from 'src/app/Servicios/tareas.service';
 export class CreatTareasComponent implements OnInit {
   CreateTareas: FormGroup;
   Submitted = false;
+  Cargando= false;
 
   constructor(private FB: FormBuilder,
               private _tareasService:TareasService,
@@ -43,11 +44,12 @@ export class CreatTareasComponent implements OnInit {
       FechadeCreacion: new Date(),
       FechadeActualizacion : new Date()
     }
-    
+    this.Cargando = true;
     this._tareasService.agregarTarea(tareas).then(() =>{
       this.toastr.success("La Tarea se Registro con exito","¡Tarea Registrada!",{
         positionClass:'toast-bottom-right'
       });
+      this.Cargando=false;
       this.router.navigate(["/list-Tareas"]);
     }).catch (error =>{
       console.log(error);
