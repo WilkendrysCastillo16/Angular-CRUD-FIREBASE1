@@ -21,4 +21,12 @@ export class TareasService {
 return this.firestore.collection("Tarea").doc(id).delete();
   }
 
+  GetTarea(id:string):Observable<any>{
+    return this.firestore.collection("Tarea").doc(id).snapshotChanges();
+  }
+
+  Actualizartarea(id:string, data:any): Promise<any>{
+    return this.firestore.collection("Tarea").doc(id).update(data);
+  }
+
 }

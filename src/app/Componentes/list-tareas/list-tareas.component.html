@@ -21,7 +21,7 @@
                     <td>{{Tarea.NombreTrabajo}}</td>
                     <td>{{Tarea.FechaEntrega}}</td>
                     <td>
-                        <i class="A far fa-edit fa-lg text-info"></i>
+                        <i class="A far fa-edit fa-lg text-info" [routerLink]="['/EditTareas/',Tarea.id]"></i>
                         <i (click)="EliminarTarea(Tarea.id)" class="B far fa-trash-alt fa-lg text-danger"></i>
                     </td>
                   </tr>

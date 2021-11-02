@@ -4,13 +4,13 @@
             
             <div class="card text-center">
                 <div class="card-body">
-                    <h3>Agregar Tarea
+                    <h3>{{titulo}}
                         <div *ngIf="Cargando" class="Sp spinner-grow" role="status">
                             <span class="visually-hidden">Loading...</span>
                           </div>
                     </h3>
                 <span *ngIf="Submitted && CreateTareas.invalid" class="badge badge-danger">TODOS LOS CAMPOS SON OBLIGATORIOS</span>
-                    <form class="mt-4"[formGroup]="CreateTareas" (ngSubmit)="AgregarTarea()">
+                    <form class="mt-4"[formGroup]="CreateTareas" (ngSubmit)="AgregarEditarTarea()">
                         <div class="row">
                             <div class="col">
                                 <input type="text" class="form-control form-control-lg" 

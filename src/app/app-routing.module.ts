@@ -7,7 +7,9 @@ const routes: Routes = [
   {path:"",redirectTo:"list-tareas", pathMatch:"full"},
   {path:"list-tareas",component: ListTareasComponent},
   {path:"Create-Tareas",component:CreatTareasComponent},
+  {path:"EditTareas/:id",component:CreatTareasComponent},
   {path:"**",redirectTo:"list-tareas", pathMatch:"full"}
+  
 ];
 
 @NgModule({
