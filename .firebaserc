@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "api-angular-crud-firebase": {
+      "hosting": {
+        "Angular-CRUD-FIREBASE1": [
+          "api-angular-crud-firebase"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "api-angular-crud-firebase"
+  }
+}
