@@ -17,5 +17,8 @@ export class TareasService {
   GetTareas():Observable<any>{
     return this.firestore.collection("Tarea", ref => ref.orderBy("FechadeCreacion",'asc')).snapshotChanges();
   }
+  EliminarTarea(id: string):Promise<any> {
+return this.firestore.collection("Tarea").doc(id).delete();
+  }
 
 }
