@@ -3,7 +3,8 @@
         <div class="card-body">
             <span class="h3">Lista de Tareas</span>
             <button class="btn btn-dark btn-lg" routerLink="/Create-Tareas" >Agregar</button>
-            <table class="table table-striped mt-5">
+            <h6 *ngIf="Tareas.length == 0" class="NoDatos" >No Hay Datos por el Momento!!!</h6>
+            <table *ngIf="Tareas.length > 0" class="table table-striped mt-5">
                 <thead>
                   <tr>
                     <th>Materia</th>
@@ -21,7 +22,7 @@
                     <td>{{Tarea.FechaEntrega}}</td>
                     <td>
                         <i class="A far fa-edit fa-lg text-info"></i>
-                        <i class="B far fa-trash-alt fa-lg text-danger"></i>
+                        <i (click)="EliminarTarea(Tarea.id)" class="B far fa-trash-alt fa-lg text-danger"></i>
                     </td>
                   </tr>
                 </tbody>
