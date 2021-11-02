@@ -5,17 +5,23 @@
             <div class="card text-center">
                 <div class="card-body">
                     <h3>Agregar Tarea</h3>
-                    <form class="mt-4">
+                <span *ngIf="Submitted && CreateTareas.invalid" class="badge badge-danger">TODOS LOS CAMPOS SON OBLIGATORIOS</span>
+                    <form class="mt-4"[formGroup]="CreateTareas" (ngSubmit)="AgregarTarea()">
                         <div class="row">
                             <div class="col">
-                                <input type="text" class="form-control form-control-lg" placeholder="Materia">
+                                <input type="text" class="form-control form-control-lg" 
+                                formControlName="Materia" placeholder="Materia">
                             </div>
                             <div class="col">
-                                <input type="text" class="form-control form-control-lg" placeholder="Profesor">
+                                <input type="text" class="form-control form-control-lg" 
+                                formControlName="Profesor" placeholder="Profesor">
                             </div>
                         </div>
-                        <input type="text" class="form-control form-control-lg mt-3" placeholder="Nombre del Trabajo">
-                        <input type="text" class="form-control form-control-lg mt-3" placeholder="Fecha de Entrega">
+                        <input type="text" class="form-control form-control-lg mt-3" 
+                        formControlName="NombreTrabajo" placeholder="Nombre del Trabajo">
+
+                        <input type="text" class="form-control form-control-lg mt-3" 
+                        formControlName="FechaEntrega" placeholder="Fecha de Entrega">
                         <div class="mt-3">
                             <button type="text" class="btn btn-secondary btn-lg mr-3" routerLink="/list-tareas">Atras</button>
                             <button type="submit" class="btn btn-dark btn-lg">Guardar</button>
