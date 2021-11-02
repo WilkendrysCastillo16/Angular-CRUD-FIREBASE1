@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { ToastrService } from 'ngx-toastr';
 import { Observable } from 'rxjs';
 import { TareasService } from 'src/app/Servicios/tareas.service';
 
@@ -11,7 +12,8 @@ import { TareasService } from 'src/app/Servicios/tareas.service';
 export class ListTareasComponent implements OnInit {
   Tareas: any[] = [];
 
-  constructor(private _tareasservice:TareasService) { 
+  constructor(private _tareasservice:TareasService,
+    private toastr: ToastrService) { 
     
   }
 
@@ -32,6 +34,16 @@ export class ListTareasComponent implements OnInit {
       });
       console.log(this.Tareas);
     });
+  }
+  EliminarTarea(id:string){
+this._tareasservice.EliminarTarea(id).then(()=>{
+  console.log("Eliminado");
+  this.toastr.error("La Tarea fue Eliminada con Exito","¡Tarea Eliminada!",{
+    positionClass:"toast-bottom-right"
+  });
+}).catch(error=>{
+  console.log(error);
+})
   }
 
 }
