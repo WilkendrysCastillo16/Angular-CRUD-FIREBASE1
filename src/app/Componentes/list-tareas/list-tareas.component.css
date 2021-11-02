@@ -9,3 +9,9 @@
 i{
     cursor: pointer;
 }
+
+.NoDatos{
+    margin-top: 30px;
+    color: red;
+    text-align:center;
+}
